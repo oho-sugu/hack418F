@@ -1,4 +1,4 @@
-
+// hoge
 
 
 var drone = require('./drone.js');
@@ -13,9 +13,18 @@ process.stdin.resume();
 var ACTIVE = true;
 var STEPS = 5;
 
+console.log('connect drones');
+
 drone.wakeup('M');
 drone.wakeup('B');
 drone.wakeup('S');
+/*drone.wakeup('M', function () {
+	drone.wakeup('B', function () {
+		drone.wakeup('S');
+	});
+
+});
+*/
 // drone.wakeup_blaze();
 
 process.stdin.on('keypress', function(ch, key) {
@@ -41,14 +50,16 @@ process.stdin.on('keypress', function(ch, key) {
 
 		// special 2
 		if (key.name === 'a') {
-			drone.frontFlip('M');
-			drone.frontFlip('S');
-			drone.frontFlip('B');
+			drone.autopilot_test('M');
+			drone.autopilot_test('S');
+			drone.autopilot_test('B');
 
 		}
 
 		if (key.name === 'b') {
-			drone.attack_avert('M', 'B');
+			drone.backFrip('M');
+			drone.backFrip('S');
+			drone.backFrip('B');
 		}
 
 		if(key.name === 's') {
@@ -73,18 +84,30 @@ process.stdin.on('keypress', function(ch, key) {
 	    }
 
 	    if (key.name === 'up') {
-	      	drone.forward({ id:'M', steps: STEPS });
+	     // 	drone.forward({ id:'M', steps: STEPS });
 	      	//drone.up();
 	      	// cooldown();
+		    drone.frontFlip('M');
+			//drone.frontFlip('S');
+			drone.frontFlip('B');
 	    } else if (key.name === 'down') {
-	      	drone.backward({ id:'M', steps: STEPS });
+	      	//drone.backward({ id:'M', steps: STEPS });
 	      	// cooldown();
+			drone.backFlip('M');
+			drone.backFlip('S');
+			drone.backFlip('B');
 	    } else if (key.name === 'right') {
-	      	drone.tiltRight({ id:'M', steps: STEPS });
+	      	//drone.tiltRight({ id:'M', steps: STEPS });
 	      	// cooldown();
+			drone.rightFlip('M');
+			drone.rightFlip('S');
+			drone.rightFlip('B');
 	    } else if (key.name === 'left') {
-	      	drone.tiltLeft({ id:'M', steps: STEPS });
+	      	//drone.tiltLeft({ id:'M', steps: STEPS });
 	      	// cooldown();
+			drone.leftFlip('M');
+			drone.leftFlip('S');
+			drone.leftFlip('B');
 	    } else if (key.name === 'u') {
 	      	drone.up({ id:'M', steps: STEPS });
 	      	// cooldown();
