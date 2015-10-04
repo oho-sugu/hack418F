@@ -5,6 +5,16 @@ var fs= require('fs');
 
 
 var drone = require('./drone.js');
+drone.wakeup('M', function () {
+  drone.takeOff('M');
+});
+drone.wakeup('B', function () {
+  drone.takeOff('B');
+});
+drone.wakeup('S', function () {
+  drone.takeOff('S');
+});
+
 console.log(drone);
 
 var RollingSpider = require("rolling-spider");

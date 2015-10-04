@@ -22,7 +22,7 @@ var d = {'M': d_mars,
 
 
 
-exports.wakeup = function(id) {
+exports.wakeup = function(id, cb) {
 	// console.log(id, d[id])
 	if (!d[id]) {
 		console.log('id is not correct ', id);
@@ -51,6 +51,7 @@ exports.wakeup = function(id) {
 */
     	setTimeout(function () {
       		console.log(d[id].name + ' => SESSION START');
+			cb();
       		// ACTIVE = true;
     	}, 1000);
   	});
