@@ -1,6 +1,8 @@
 /*
 	methonds for control a drone
 	created by hamada 
+
+	2105
 */
 
 
@@ -9,9 +11,9 @@
 var RollingSpider = require("rolling-spider");
 var temporal = require('temporal');
 
-var d_mars  = new RollingSpider({uuid:"64ee3b2c2e4649e596467b8d60d98767"});
-var d_blaze = new RollingSpider({uuid:"8da392be47304342929ffde7d89afc8e"});
-var d_swat =  new RollingSpider({uuid:"5381b23c73914e6387a1fa14c0adb7e8"});
+var d_mars  = new RollingSpider({uuid:"2e24d06455b04ef8a5dc25fce6272a9c"});
+var d_blaze = new RollingSpider({uuid:"634d889890484689ae597d48a1ca939e"});
+var d_swat =  new RollingSpider({uuid:"988d508828a148d1a4908bfe20562fa2"});
 var d = {'M': d_mars,
 		 'B': d_blaze,
 		 'S': d_swat};
@@ -22,7 +24,7 @@ var d = {'M': d_mars,
 
 
 
-exports.wakeup = function(id, cb) {
+exports.wakeup = function(id) {
 	// console.log(id, d[id])
 	if (!d[id]) {
 		console.log('id is not correct ', id);
@@ -51,11 +53,12 @@ exports.wakeup = function(id, cb) {
 */
     	setTimeout(function () {
       		console.log(d[id].name + ' => SESSION START');
-			cb();
       		// ACTIVE = true;
     	}, 1000);
   	});
 	});
+
+	//callback();
 };
 
 
