@@ -6,22 +6,19 @@ angular.module('index', [])
         $scope.showSide = true;
         $scope.toggle = function() {
             $scope.showSide = !$scope.showSide;
-            console.log($scope.showSide);
         };
         var num = 0;
-        $http.get('/get')
-            .success(function (data) {
-                $scope.item = data;
-                $scope.view = $scope.item[num].text;
-                $scope.sentaku = $scope.item[num].sentaku;
-            });
-        var click_sentaku = function (index) {
+        var socket = io();
+        socket.on('sentaku', function (sentaku) {
+            console.log(sentaku);
+            $scope.sentaku = sentaku;
+            $scope.$apply();
+        });
+        $scope.click_sentaku = function (index) {
             console.log(index);
-            $http.get('/index')
+            $http.get('/sentaku/'+index)
                 .success(function (data) {
                 });
             num++;
-            $scope.view = $scope.item[num].text;
-            $scope.sentaku = $scope.item[num].sentaku;
         }
     });

@@ -23,6 +23,7 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="angular_index.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
@@ -32,12 +33,17 @@
         <div ng-class="showSide ? 'col-xs-9' : 'col-xs-12'" id="colMain">
           <button ng-click="toggle()" class="toggle">Toggle</button>
           <div id="Main">
-            <p>{{}}</p>
-
+            <script>
+              var socket = io();
+              socket.on('script', function (script) {
+                $('#Main').html($('<div>').text(script));
+              });
+            </script>
           </div>
           <div id="SelectMenu">
-            <li ng-repeat="sentaku_item in sentaku track by $index" ng-click="click_sentaku($index)">
-              {{sentaku_item.text}}</li>
+            <li ng-repeat="item_sentaku in sentaku track by $index" ng-click="click_sentaku($index)">
+              {{item_sentaku.text}}
+            </li>
           </div>
         </div>
         <div ng-class="showSide ? 'col-xs-3' : 'hidden'" id="colSide">
@@ -46,7 +52,6 @@
             <input id="m" autocomplete="off" ng-class="showSide ? 'col-xs-2' : 'hidden'" />
             <button ng-class="showSide ? 'col-xs-1' : 'hidden'" >Send</button>
           </form>
-          <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
           <script>
             var socket = io();
             $('form').submit(function(){

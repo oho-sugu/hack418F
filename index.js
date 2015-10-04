@@ -15,7 +15,9 @@ var ACTIVE = true;
 var STEPS = 5;
 var d = new RollingSpider({uuid:"8581b07eed0d42679702cb7b7235ec05"}); //各々書き換えましょう。
 
-
+var all = [{'text': 'Start', 'motion': [{'text':'go','motion':'t'},{'text':'up','motion':'u'}]},
+  {'text': 'End', 'motion': [{'text':'gogo','motion':'up'},{'text':'back','motion':'down'}]}];
+var num=0;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -26,6 +28,7 @@ app.get('/angular_index.js', function (req, res) {
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
+    //この部分は関数で後ろに
     if(msg === 't'){
       console.log('takeoff');
       d.takeOff();
@@ -34,11 +37,28 @@ io.on('connection', function(socket){
       console.log('land');
       d.land();
     }
+    //
   });
+  var script = all[num].text;
+  var sentaku = all[num].motion;
+  setTimeout(function(){
+    io.emit('script', script);
+  },500);
+  setTimeout(function(){
+    io.emit('sentaku', sentaku);
+  },500);
+  socket.on('sentaku', function (sentaku) {
+    io.emit('sentaku');
+  })
 });
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
+});
+
+var core=[0,0,0,0];
+app.get('/sentaku/:index', function (req, res) {
+  core[req.params.index]++;
 });
 
 
