@@ -49,23 +49,23 @@ module.exports=[
         motion: [
             {
                 text: "delight",
-                motion: "FrontFrip"
+                motion: "frontFrip"
             },
             {
                 text: "angry",
-                motion: "Up"
+                motion: "up"
             },
             {
                 text: "sadness",
-                motion: "Down"
+                motion: "down"
             },
             {
                 text: "atack",
-                motion: "Farward"
+                motion: "forward"
             },
             {
                 text: "avoid",
-                motion: "SideFrip"
+                motion: "sideFrip"
             },
             {
                 text: "none",
@@ -78,23 +78,23 @@ module.exports=[
         motion: [
             {
                 text: "delight",
-                motion: "FrontFrip"
+                motion: "frontFrip"
             },
             {
                 text: "angry",
-                motion: "Up"
+                motion: "up"
             },
             {
                 text: "sadness",
-                motion: "Down"
+                motion: "down"
             },
             {
                 text: "atack",
-                motion: "Farward"
+                motion: "forward"
             },
             {
                 text: "avoid",
-                motion: "SideFrip"
+                motion: "sideFrip"
             },
             {
                 text: "none",
@@ -107,23 +107,23 @@ module.exports=[
         motion: [
             {
                 text: "delight",
-                motion: "FrontFrip"
+                motion: "frontFrip"
             },
             {
                 text: "angry",
-                motion: "Up"
+                motion: "up"
             },
             {
                 text: "sadness",
-                motion: "Down"
+                motion: "down"
             },
             {
                 text: "atack",
-                motion: "Farward"
+                motion: "forward"
             },
             {
                 text: "avoid",
-                motion: "SideFrip"
+                motion: "sideFrip"
             },
             {
                 text: "none",
@@ -145,23 +145,23 @@ module.exports=[
         motion: [
             {
                 text: "delight",
-                motion: "FrontFrip"
+                motion: "frontFrip"
             },
             {
                 text: "angry",
-                motion: "Up"
+                motion: "up"
             },
             {
                 text: "sadness",
-                motion: "Down"
+                motion: "down"
             },
             {
                 text: "atack",
-                motion: "Farward"
+                motion: "forward"
             },
             {
                 text: "avoid",
-                motion: "SideFrip"
+                motion: "sideFrip"
             },
             {
                 text: "none",
@@ -171,25 +171,26 @@ module.exports=[
     },
     {
         text: "ロリパイ「あたいの名前はローリングスパイダー！人呼んで、地獄からの死者！ローリングスパイダーッあんたの進捗、いますぐここに置いてたちさりな！ そうすりゃ電池だけは助けてやる」",
-        motion: {
+        motion: [
+        {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -202,23 +203,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -231,23 +232,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -260,23 +261,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -289,23 +290,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -318,23 +319,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -347,23 +348,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -376,23 +377,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -405,23 +406,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -434,23 +435,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -463,23 +464,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -492,23 +493,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -521,23 +522,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -550,23 +551,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -579,23 +580,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -608,23 +609,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -637,23 +638,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -666,23 +667,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -695,23 +696,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -724,23 +725,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -753,23 +754,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -791,23 +792,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -820,23 +821,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -849,23 +850,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -878,23 +879,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -907,23 +908,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -936,23 +937,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -965,23 +966,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -994,23 +995,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1023,23 +1024,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1052,23 +1053,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1081,23 +1082,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1110,23 +1111,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1139,23 +1140,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1168,23 +1169,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1197,23 +1198,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1226,23 +1227,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1255,23 +1256,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1284,23 +1285,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1313,23 +1314,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1342,23 +1343,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1371,23 +1372,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1400,23 +1401,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1429,23 +1430,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1458,23 +1459,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1487,23 +1488,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1516,23 +1517,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1545,23 +1546,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1610,23 +1611,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1639,23 +1640,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1668,23 +1669,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1697,23 +1698,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1726,23 +1727,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1755,23 +1756,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1784,23 +1785,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1813,23 +1814,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1842,23 +1843,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1871,23 +1872,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
@@ -1900,23 +1901,23 @@ module.exports=[
     motion: [
         {
             text: "delight",
-            motion: "FrontFrip"
+            motion: "frontFrip"
         },
         {
             text: "angry",
-            motion: "Up"
+            motion: "up"
         },
         {
             text: "sadness",
-            motion: "Down"
+            motion: "down"
         },
         {
             text: "atack",
-            motion: "Farward"
+            motion: "forward"
         },
         {
             text: "avoid",
-            motion: "SideFrip"
+            motion: "sideFrip"
         },
         {
             text: "none",
