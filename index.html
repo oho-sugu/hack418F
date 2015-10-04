@@ -20,6 +20,14 @@
       #messages li:nth-child(even) { background: #eee; }
       #Main{ height: 65%;}
       #SelectMenu{ height: 33%;}
+      #script { font-size: 350%;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+        position: relative;
+        top: 30%;
+        transform: translateY(-30%);
+      }
 
 
     </style>
@@ -38,7 +46,7 @@
             <script>
               var socket = io();
               socket.on('script', function (script) {
-                $('#Main').html($('<div>').text(script));
+                $('#Main').html($('<div id="script">').text(script));
               });
               var chat_num =0;
             </script>
