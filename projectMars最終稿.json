@@ -1,10 +1,10 @@
-        {text:"人のいない遠い未来の物語",motion:[{text:"",motion:"stay"}]}
-        {text:"遺された機械は日々の進捗を出すことによって、自らのエネルギーに変えていた。",motion:[{text:"",motion:"stay"}]}
-        {text:"だが、魔王ドローンブレイズの進捗の略奪によって平穏は崩れた",motion:[{text:"",motion:""}]}
-        {text:"若者ドローンマーズの父も進捗を略奪され、壊れました。",motion:[{text:"",motion:""}]}
-        {text:"これは若者ドローンマーズの復讐と進捗の物語",motion:[{text:"",motion:""}]}
+        {text:"人のいない遠い未来の物語",motion:[{text:"none",motion:"stay"}]}
+        {text:"遺された機械は日々の進捗を出すことによって、自らのエネルギーに変えていた。",motion:[{text:"none",motion:"stay"}]}
+        {text:"だが、魔王ドローンブレイズの進捗の略奪によって平穏は崩れた",motion:[{text:"none",motion:"stay"}]}
+        {text:"若者ドローンマーズの父も進捗を略奪され、壊れました。",motion:[{text:"none",motion:"stay"}]}
+        {text:"これは若者ドローンマーズの復讐と進捗の物語",motion:[{text:"none",motion:"stay"}]}
 
-        {text:"マーズ「魔王ブレイズめ、俺がこの手で父の敵を討ってやる！」",motion:[{text:"",motion:""}]}
+        {text:"マーズ「魔王ブレイズめ、俺がこの手で父の敵を討ってやる！」",motion:[{text:"delight",motion:"FrontFrip"},{text:"angry",motion:"Up"},{text:"sadness",motion:"Down"},{text:"atack",motion:"Farward"},{text:"avoid",motion:"SideFrip"},{text:"none",motion:"stay"}]}
 
         {text:"ローリングスパイダー「ちょいと待ちなそこのお前！」",motion:[{text:"",motion:""}]}
         {text:"ロリパイ「この世捨て走行型の街に飛行型が来るとはいい度胸だ」",motion:[{text:"",motion:""}]}
