@@ -1,36 +1,26 @@
+/*
+	methonds for control a drone
+	created by hamada 
+*/
+
+
+
+
 var RollingSpider = require("rolling-spider");
-var keypress = require('keypress');
 var temporal = require('temporal');
-keypress(process.stdin);
 
-process.stdin.setRawMode(true);
-process.stdin.resume();
+var d = new RollingSpider({uuid:"64ee3b2c2e4649e596467b8d60d98767"});
+var d_blaze = new RollingSpider({uuid:"8da392be47304342929ffde7d89afc8e"});
 
-var ACTIVE = true;
-var STEPS = 5;
-var d = new RollingSpider({uuid:"7b5b3c3f2db1464f9ec0525c15991f7c"}); //各々書き換えましょう。
 
-function cooldown() {
-  ACTIVE = false;
-  setTimeout(function () {
-    ACTIVE = true;
-  }, STEPS);
-}
+exports.wakeup = function() {
+	d.connect(function () {
 
-// hamada added
-function delay() {
-  setTimeout(function() {
-    console.log('delay start');
-  }, 1000);
-}
-
-d.connect(function () {
-
-  d.setup(function () {
-    console.log('Configured for Rolling Spider! ', d.name);
-    d.flatTrim();
-    d.startPing();
-    d.flatTrim();
+  	d.setup(function () {
+    	console.log('Configured for Rolling Spider! ', d.name);
+    	d.flatTrim();
+    	d.startPing();
+    	d.flatTrim();
 /*
     d.on('battery', function () {
       console.log('Battery: ' + d.status.battery + '%');
@@ -44,25 +34,121 @@ d.connect(function () {
       console.log(d.status.flying ? "-- flying" : "-- down");
     })
 */
-    setTimeout(function () {
-      console.log(d.name + ' => SESSION START');
-      ACTIVE = true;
-    }, 1000);
+    	setTimeout(function () {
+      		console.log(d.name + ' => SESSION START');
+      		// ACTIVE = true;
+    	}, 1000);
+  	});
+	});
+};
 
-  });
-});
+exports.up = function(steps) {
+	if (!steps) {
+		console.log("up steps 20");
+		d.up({steps: 20});
+	}
+	else {
+		console.log("up steps ", steps);
+		d.up({steps: steps});
+	}
+};
 
-// listen for the "keypress" event
-process.stdin.on('keypress', function (ch, key) {
+exports.down = function(steps) {
+	if (!steps) {
+		console.log("down steps 20");
+		d.down({steps: 20});
+	}
+	else {
+		console.log("down steps ", steps);
+		d.down({steps: steps});
+	}
+};
 
-  console.log('got "keypress" => ', key);
+exports.takeOff = function() {
+	console.log('take off');
+	d.takeOff();
+};
 
-  if (ACTIVE && key) {
+exports.land = function() {
+	console.log('land');
+	d.land();
+};
 
-    var param = {tilt:0, forward:0, turn:0, up:0};
+exports.hover = function() {
+	console.log('hover ');
+	d.hover();
+};
+
+exports.disconnect = function() {
+	console.log('disconnect');
+	process.stdin.pause();
+    process.exit();
+};
 
 
-    if (key.name === 'a') {
+exports.forward = function(steps, speed) {
+	if (!speed) {
+		// console.log('1 steps speed', steps, speed);
+		d.forward({ steps: steps });
+	}
+	else {
+		// console.log('2 steps, speed ', steps, speed);
+		d.forward({ steps: steps, speed: speed });
+	}
+};
+
+exports.backward = function(steps, speed) {
+	if (!speed) {
+		// console.log('1 steps speed', steps, speed);
+		d.backward({ steps: steps });
+	}
+	else {
+		// console.log('2 steps, speed ', steps, speed);
+		d.backward({ steps: steps, speed: speed });
+	}
+};
+
+exports.tiltRight = function(steps, speed) {
+	if (!speed) {
+		// console.log('1 steps speed', steps, speed);
+		d.tiltRight({ steps: steps });
+	}
+	else {
+		// console.log('2 steps, speed ', steps, speed);
+		d.tiltRight({ steps: steps, speed: speed });
+	}
+};
+
+exports.tiltLeft = function(steps, speed) {
+	if (!speed) {
+		// console.log('1 steps speed', steps, speed);
+		d.tiltLeft({ steps: steps });
+	}
+	else {
+		// console.log('2 steps, speed ', steps, speed);
+		d.tiltLeft({ steps: steps, speed: speed });
+	}
+};
+
+exports.turnRight = function(steps) {
+	d.drive({tilt:0, forward:0, turn:90, up:0}, steps);
+};
+
+exports.turnLeft = function(steps) {
+	d.drive({tilt:0, forward:0, turn:-90, up:0}, steps);
+};
+
+exports.frontFlip = function () {
+	d.frontFlip();
+}
+
+exports.backFlip = function () {
+	d.backFlip();
+}
+
+// test code to autopilot
+exports.autopilot_test = function() {
+  console.log('Start autopilot_test() function');
       temporal.queue([
       {
         delay: 5000,
@@ -125,67 +211,9 @@ process.stdin.on('keypress', function (ch, key) {
         delay: 5000,
         task: function () {
           temporal.clear();
-          process.exit(0);
+          // process.exit(0);
         }
       }
-      
-    }
+    ]);
+};
 
-
-    if (key.name === 'l') {
-      console.log('land');
-      d.land();
-    } else if (key.name === 't') {
-      console.log('takeoff');
-      d.takeOff();
-    } else if (key.name === 'h') {
-      console.log('hover');
-      d.hover();
-    } else if (key.name === 'x') {
-      console.log('disconnect');
-      d.disconnect();
-      process.stdin.pause();
-      process.exit();
-    }
-
-    if (key.name === 'up') {
-      d.forward({ steps: STEPS });
-      cooldown();
-    } else if (key.name === 'down') {
-      d.backward({ steps: STEPS });
-      cooldown();
-    } else if (key.name === 'right') {
-      d.tiltRight({ steps: STEPS });
-      cooldown();
-    } else if (key.name === 'left') {
-      d.tiltLeft({ steps: STEPS });
-      cooldown();
-    } else if (key.name === 'u') {
-      d.up({ steps: STEPS });
-      cooldown();
-    } else if (key.name === 'd') {
-      d.down({ steps: STEPS });
-      cooldown();
-    }
-
-    if (key.name === 'm') {
-      param.turn = 90;
-      d.drive(param, STEPS);
-      cooldown();
-    }
-    if (key.name === 'h') {
-      param.turn = -90;
-      d.drive(param, STEPS);
-      cooldown();
-    }
-    if (key.name === 'f') {
-      d.frontFlip();
-      cooldown();
-    }
-    if (key.name === 'b') {
-      d.backFlip();
-      cooldown();
-    }
-
-  }
-});
