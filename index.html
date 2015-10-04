@@ -52,9 +52,11 @@
             </script>
           </div>
           <div id="SelectMenu">
-            <button ng-repeat="item_sentaku in sentaku track by $index" ng-click="click_sentaku($index)" class="col-xs-12 btn btn-default" style="height: 16.66%; margin: 1px; font-size: larger;">
-              {{item_sentaku.text}}
-            </button>
+            <div ng-repeat="item_sentaku in sentaku track by $index" ng-hide="!item_sentaku.text === ''">
+              <button  ng-click="click_sentaku($index)" class="col-xs-12 btn btn-default" style="height: 16.66%; margin: 1px; font-size: larger;">
+                {{item_sentaku.text}}
+              </button>
+            </div>
           </div>
         </div>
         <div ng-class="showSide ? 'col-xs-3' : 'hidden'" id="colSide" >
