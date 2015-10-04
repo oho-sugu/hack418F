@@ -140,8 +140,8 @@ process.stdin.on('keypress', function (ch, key) {
   if (ACTIVE && key) {
     if (key.name === 'x') {
       console.log('disconnect');
-      process.stdin.pause();
-      process.exit();
+      drone.disconnect();
+      
     }
 
   }
