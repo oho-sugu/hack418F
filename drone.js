@@ -42,6 +42,35 @@ exports.wakeup = function() {
 	});
 };
 
+exports.wakeup_blaze = function() {
+	d_blaze.connect(function () {
+
+  	d_blaze.setup(function () {
+    	console.log('Configured for Rolling Spider! ', d_blaze.name);
+    	d_blaze.flatTrim();
+    	d_blaze.startPing();
+    	d_blaze.flatTrim();
+/*
+    d.on('battery', function () {
+      console.log('Battery: ' + d.status.battery + '%');
+      d.signalStrength(function (err, val) {
+        console.log('Signal: ' + val + 'dBm');
+      });
+
+    });
+
+    d.on('stateChange', function () {
+      console.log(d.status.flying ? "-- flying" : "-- down");
+    })
+*/
+    	setTimeout(function () {
+      		console.log(d_blaze.name + ' => SESSION START');
+      		// ACTIVE = true;
+    	}, 1000);
+  	});
+	});
+};
+
 exports.up = function(steps) {
 	if (!steps) {
 		console.log("up steps 20");
@@ -216,4 +245,77 @@ exports.autopilot_test = function() {
       }
     ]);
 };
+
+
+exports.autopilot_test_blaze = function() {
+  console.log('Start autopilot_test() function');
+      temporal.queue([
+      {
+        delay: 5000,
+        task: function () {
+          console.log('Getting ready for takeOff!');
+          d_blaze.takeOff();
+          d_blaze.flatTrim();
+        }
+      },
+      {
+        delay: 4500,
+        task: function () {
+          console.log('Going forward');
+          d_blaze.forward({steps: 12});
+        }
+      },
+      {
+        delay: 4500,
+        task: function () {
+          console.log('Going up');
+          d_blaze.up({steps: 20});
+        }
+      },
+      {
+        delay: 4500,
+        task: function () {
+          console.log('Going down');
+          d_blaze.down({steps: 20});
+        }
+      },
+      {
+        delay: 4500,
+        task: function () {
+          console.log('Going left');
+          d_blaze.tiltLeft({steps: 12, speed: 100});
+        }
+      },
+      {
+        delay: 4500,
+        task: function () {
+          console.log('Going right');
+          d_blaze.tiltRight({steps: 12, speed: 100});
+        }
+      },
+      {
+        delay: 5000,
+        task: function () {
+          console.log('OMG Flip!');
+          d_blaze.frontFlip();
+        }
+      },
+      {
+        delay: 5000,
+        task: function () {
+          console.log('Time to land');
+          d_blaze.land();
+        }
+      },
+      {
+        delay: 5000,
+        task: function () {
+          temporal.clear();
+          // process.exit(0);
+        }
+      }
+    ]);
+};
+
+
 
