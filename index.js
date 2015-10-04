@@ -33,7 +33,7 @@ var STEPS = 5;
 
 
 var num=0;
-var core=[0,0,0,0];
+var core=[0,0,0,0,0,0,0,0,0,0,0];
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -52,18 +52,28 @@ io.on('connection', function(socket){
     console.log(msg);
     //この部分は関数で後ろに
     switch(msg){
-      case 1:
+      case "1":
         core[0]++;
         break;
-      case 2:
+      case "2":
         core[1]++;
         break;
-      case 3:
+      case "3":
         core[2]++;
         break;
-      case 4:
+      case "4":
         core[3]++;
         break;
+      case "5":
+        core[4]++;
+        break;
+      case "6":
+        core[5]++;
+        break;
+      case "7":
+        core[6]++;
+        break;
+
     }
     //
   });
@@ -94,16 +104,23 @@ app.get('/sentaku/:index', function (req, res) {
 setInterval(function(){
   var kore = 0;
   var max = -1;
-  for(var i =0 ;i<4 ; i++){
-    if(max <= core[i]){}
-    max = core[i];
-    kore = i;
+  console.log(core);
+  for(var i =0 ;i<8 ; i++){
+
+    if(max <= core[i]) {
+      max = core[i];
+      kore = i;
+    }
   }
 
-  console.log(all[num].id);
+  console.log(kore);
 
-  if(all[num].id && all[num].motion[i]){
-      drone[all[num].motion[i].motion](all[num].id);
+  console.log(all[num].id);
+  console.log(all[num].motion[kore]);
+  if(all[num].id && all[num].motion[kore]){
+    console.log(all[num].id);
+    console.log(all[num].motion[kore].motion);
+      drone[all[num].motion[kore].motion](all[num].id);
   }
 
   num++;
@@ -111,7 +128,7 @@ setInterval(function(){
   var sentaku = all[num].motion;
   io.emit('script', script);
   io.emit('sentaku', sentaku);
-  core = [0,0,0,0];
+  core=[0,0,0,0,0,0,0,0,0,0,0];
 
 }, 5000);
 
@@ -187,7 +204,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -217,7 +234,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -247,7 +264,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -287,7 +304,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -317,7 +334,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -347,7 +364,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -377,7 +394,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -407,7 +424,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -437,7 +454,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -467,7 +484,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -497,7 +514,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -527,7 +544,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -557,7 +574,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -587,7 +604,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -617,7 +634,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -647,7 +664,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -677,7 +694,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -707,7 +724,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -737,7 +754,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -767,7 +784,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -797,7 +814,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -827,7 +844,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -857,7 +874,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -887,7 +904,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -917,7 +934,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -957,7 +974,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -987,7 +1004,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1017,7 +1034,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1047,7 +1064,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1077,7 +1094,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1107,7 +1124,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1137,7 +1154,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1167,7 +1184,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1197,7 +1214,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1227,7 +1244,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1257,7 +1274,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1287,7 +1304,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1317,7 +1334,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1347,7 +1364,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1377,7 +1394,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1407,7 +1424,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1437,7 +1454,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1467,7 +1484,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1497,7 +1514,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1527,7 +1544,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1557,7 +1574,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1587,7 +1604,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1617,7 +1634,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1647,7 +1664,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1677,7 +1694,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1707,7 +1724,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1737,7 +1754,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1807,7 +1824,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1837,7 +1854,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1867,7 +1884,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1897,7 +1914,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1927,7 +1944,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1957,7 +1974,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -1987,7 +2004,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -2017,7 +2034,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -2047,7 +2064,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -2077,7 +2094,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
@@ -2107,7 +2124,7 @@ var all = [
     "motion": [
       {
         "text": "delight",
-        "motion": "frontFrip"
+        "motion": "frontFlip"
       },
       {
         "text": "angry",
