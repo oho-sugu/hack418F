@@ -15,9 +15,14 @@ var ACTIVE = true;
 var STEPS = 5;
 var d = new RollingSpider({uuid:"8581b07eed0d42679702cb7b7235ec05"}); //各々書き換えましょう。
 
-var all = [{'text': 'Start', 'motion': [{'text':'go','motion':'t'},{'text':'up','motion':'u'}]},
-  {'text': 'End', 'motion': [{'text':'gogo','motion':'up'},{'text':'back','motion':'down'}]}];
+var all = [{'text': 'Start',
+            'motion': [{'text':'go','motion':'t'},
+                       {'text':'up','motion':'u'},
+                       {'text':'up','motion':'u'} ]},
+           {'text': 'End', 'motion': [{'text':'gogo','motion':'up'},{'text':'back','motion':'down'}]}];
+
 var num=0;
+var core=[0,0,0,0];
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -25,9 +30,15 @@ app.get('/', function(req, res){
 app.get('/angular_index.js', function (req, res) {
   res.sendFile(__dirname + '/angular_index.js');
 });
+app.get('/glue.js', function (req,res) {
+  res.sendFile(__dirname+'/node_modules/glue.js');
+});
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    if(msg!=''){
+      io.emit('chat message', msg);
+    }
+    console.log(msg);
     //この部分は関数で後ろに
     if(msg === 't'){
       console.log('takeoff');
@@ -37,31 +48,66 @@ io.on('connection', function(socket){
       console.log('land');
       d.land();
     }
+    switch(msg){
+      case 1:
+        core[0]++;
+        break;
+      case 2:
+        core[1]++;
+        break;
+      case 3:
+        core[2]++;
+        break;
+      case 4:
+        core[3]++;
+        break;
+    }
     //
   });
+
   var script = all[num].text;
   var sentaku = all[num].motion;
+
   setTimeout(function(){
     io.emit('script', script);
   },500);
   setTimeout(function(){
     io.emit('sentaku', sentaku);
   },500);
+
   socket.on('sentaku', function (sentaku) {
-    io.emit('sentaku');
-  })
+
+  });
 });
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 
-var core=[0,0,0,0];
 app.get('/sentaku/:index', function (req, res) {
   core[req.params.index]++;
+  console.log(req.params.index);
 });
+/*
+setInterval(function(){
+  var kore = 0;
+  var max = -1;
+  for(var i =0 ;i<4 ; i++){
+    if(max <= core[i]){}
+    max = core[i];
+    kore = i;
+  }
 
+  //all[num].motion[i].motion
+  num++;
+  var script = all[num].text;
+  var sentaku = all[num].motion;
+  io.emit('script', script);
+  io.emit('sentaku', sentaku);
+  core = [0,0,0,0];
 
+},5000);
+*/
 
 function cooldown() {
   ACTIVE = false;

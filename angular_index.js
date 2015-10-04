@@ -9,6 +9,8 @@ angular.module('index', [])
         };
         var num = 0;
         var socket = io();
+        $scope.chat = [];
+        $scope.guled = true;
         socket.on('sentaku', function (sentaku) {
             console.log(sentaku);
             $scope.sentaku = sentaku;
@@ -21,4 +23,5 @@ angular.module('index', [])
                 });
             num++;
         }
+
     });
