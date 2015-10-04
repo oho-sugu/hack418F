@@ -1,4 +1,4 @@
-    var all = [
+     module.exports = [
         {text:"人のいない遠い未来の物語",motion:[{text:"",motion:""}]},
         {text:"遺された機械は日々の進捗を出すことによって、自らのエネルギーに変えていた。",motion:[{text:"",motion:""}]},
         {text:"だが、魔王ドローンブレイズの進捗の略奪によって平穏は崩れた",motion:[{text:"",motion:""}]},
