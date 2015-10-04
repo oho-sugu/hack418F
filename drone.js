@@ -9,18 +9,33 @@
 var RollingSpider = require("rolling-spider");
 var temporal = require('temporal');
 
-var d = new RollingSpider({uuid:"64ee3b2c2e4649e596467b8d60d98767"});
+var d_mars  = new RollingSpider({uuid:"64ee3b2c2e4649e596467b8d60d98767"});
 var d_blaze = new RollingSpider({uuid:"8da392be47304342929ffde7d89afc8e"});
+var d_swat =  new RollingSpider({uuid:"5381b23c73914e6387a1fa14c0adb7e8"});
+var d = {'M': d_mars,
+		 'B': d_blaze,
+		 'S': d_swat};
+
+// var d = { 'M': d_mars,
+// 		  'B': d_blaze
+// 		};
 
 
-exports.wakeup = function() {
-	d.connect(function () {
 
-  	d.setup(function () {
-    	console.log('Configured for Rolling Spider! ', d.name);
-    	d.flatTrim();
-    	d.startPing();
-    	d.flatTrim();
+exports.wakeup = function(id) {
+	// console.log(id, d[id])
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].connect(function () {
+
+  	d[id].setup(function () {
+    	console.log('Configured for Rolling Spider! ', d[id].name);
+    	d[id].flatTrim();
+    	d[id].startPing();
+    	d[id].flatTrim();
 /*
     d.on('battery', function () {
       console.log('Battery: ' + d.status.battery + '%');
@@ -35,205 +50,452 @@ exports.wakeup = function() {
     })
 */
     	setTimeout(function () {
-      		console.log(d.name + ' => SESSION START');
+      		console.log(d[id].name + ' => SESSION START');
       		// ACTIVE = true;
     	}, 1000);
   	});
 	});
 };
 
-exports.wakeup_blaze = function() {
-	d_blaze.connect(function () {
 
-  	d_blaze.setup(function () {
-    	console.log('Configured for Rolling Spider! ', d_blaze.name);
-    	d_blaze.flatTrim();
-    	d_blaze.startPing();
-    	d_blaze.flatTrim();
-/*
-    d.on('battery', function () {
-      console.log('Battery: ' + d.status.battery + '%');
-      d.signalStrength(function (err, val) {
-        console.log('Signal: ' + val + 'dBm');
-      });
 
-    });
 
-    d.on('stateChange', function () {
-      console.log(d.status.flying ? "-- flying" : "-- down");
-    })
-*/
-    	setTimeout(function () {
-      		console.log(d_blaze.name + ' => SESSION START');
-      		// ACTIVE = true;
-    	}, 1000);
-  	});
-	});
-};
+exports.up = function(id, steps) {
 
-exports.up = function(steps) {
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!steps) {
 		console.log("up steps 20");
-		d.up({steps: 20});
+		d[id].up({steps: 20});
 	}
 	else {
 		console.log("up steps ", steps);
-		d.up({steps: steps});
+		// d.up({steps: steps});
+		d[id].up({steps: steps});
 	}
 };
 
-exports.down = function(steps) {
+exports.down = function(id, steps) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!steps) {
 		console.log("down steps 20");
-		d.down({steps: 20});
+		d[id].down({steps: 20});
 	}
+
 	else {
 		console.log("down steps ", steps);
-		d.down({steps: steps});
+		d[id].down({steps: steps});
 	}
 };
 
-exports.takeOff = function() {
+exports.takeOff = function(id) {
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	console.log('take off');
-	d.takeOff();
+	d[id].takeOff();
 };
 
-exports.land = function() {
+exports.land = function(id) {
+	
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	console.log('land');
-	d.land();
+	d[id].land();
 };
 
-exports.hover = function() {
+exports.hover = function(id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	console.log('hover ');
 	d.hover();
 };
 
 exports.disconnect = function() {
+
+	d['M'].land();
+	d['B'].land();
+
 	console.log('disconnect');
 	process.stdin.pause();
     process.exit();
 };
 
 
-exports.forward = function(steps, speed) {
+exports.forward = function(id, steps, speed) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!speed) {
 		// console.log('1 steps speed', steps, speed);
-		d.forward({ steps: steps });
+		d[id].forward({ steps: steps });
 	}
 	else {
 		// console.log('2 steps, speed ', steps, speed);
-		d.forward({ steps: steps, speed: speed });
+		d[id].forward({ steps: steps, speed: speed });
 	}
 };
 
-exports.backward = function(steps, speed) {
+exports.backward = function(id, steps, speed) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!speed) {
 		// console.log('1 steps speed', steps, speed);
-		d.backward({ steps: steps });
+		d[id].backward({ steps: steps });
 	}
 	else {
 		// console.log('2 steps, speed ', steps, speed);
-		d.backward({ steps: steps, speed: speed });
+		d[id].backward({ steps: steps, speed: speed });
 	}
 };
 
-exports.tiltRight = function(steps, speed) {
+exports.tiltRight = function(id, steps, speed) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!speed) {
 		// console.log('1 steps speed', steps, speed);
-		d.tiltRight({ steps: steps });
+		d[id].tiltRight({ steps: steps });
 	}
 	else {
 		// console.log('2 steps, speed ', steps, speed);
-		d.tiltRight({ steps: steps, speed: speed });
+		d[id].tiltRight({ steps: steps, speed: speed });
 	}
 };
 
-exports.tiltLeft = function(steps, speed) {
+exports.tiltLeft = function(id, steps, speed) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
 	if (!speed) {
 		// console.log('1 steps speed', steps, speed);
-		d.tiltLeft({ steps: steps });
+		d[id].tiltLeft({ steps: steps });
 	}
 	else {
 		// console.log('2 steps, speed ', steps, speed);
-		d.tiltLeft({ steps: steps, speed: speed });
+		d[id].tiltLeft({ steps: steps, speed: speed });
 	}
 };
 
-exports.turnRight = function(steps) {
-	d.drive({tilt:0, forward:0, turn:90, up:0}, steps);
+exports.turnRight = function(id, steps) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].drive({tilt:0, forward:0, turn:90, up:0}, steps);
 };
 
-exports.turnLeft = function(steps) {
-	d.drive({tilt:0, forward:0, turn:-90, up:0}, steps);
+exports.turnLeft = function(id, steps) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].drive({tilt:0, forward:0, turn:-90, up:0}, steps);
 };
 
-exports.frontFlip = function () {
-	d.frontFlip();
+exports.frontFlip = function (id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].frontFlip();
 }
 
-exports.backFlip = function () {
-	d.backFlip();
+exports.backFlip = function (id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].backFlip();
+}
+
+exports.rightFlip = function (id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].rightFlip();
+}
+
+exports.leftFlip = function (id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].leftFlip();
+}
+
+
+exports.attack_avert = function(id1, id2) {
+	
+	if (!d[id1]) {
+		console.log('id is not correct ', id1);
+		return;
+	}
+
+	if (!d[id2]) {
+		console.log('id is not correct ', id2);
+		return;
+	}
+
+	temporal.queue([
+		{
+			delay: 1000,
+			task: function() {
+				d[id1].forward({steps: 30});
+			}
+		},
+		{
+			delay:1000,
+			task: function() {
+				d[id2].rightFlip();
+			}
+		},
+		{
+			delay: 1000,
+			task: function() {
+				d[id1].backward({steps: 30});
+			}
+		}
+	]);
+}
+
+
+exports.delight = function(id) {
+	
+	console.log('delight function');
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	d[id].frontFlip();
+}
+
+exports.anger = function(id) {
+
+	console.log('anger function');
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	temporal.queue([
+	{
+		delay: 1000,
+		task: function() {
+			d[id].up({steps: 10});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].down({steps: 10});
+		}
+	},
+	{
+		delay: 1000,
+		task: function() {
+			d[id].up({steps: 10});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].down({steps: 10});
+		}
+	},
+	{
+		delay: 1000,
+		task: function() {
+			d[id].up({steps: 10});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].down({steps: 10});
+		}
+	},
+	{
+        delay: 1000,
+        task: function () {
+          temporal.clear();
+          // process.exit(0);
+        }
+     }
+	]);
+}
+
+exports.sadness = function(id) {
+
+	console.log('sadness function');
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+
+	temporal.queue([
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltLeft({steps: 12, speed: 100});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltRight({steps: 24, speed: 100});
+		}
+	},
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltLeft({steps: 24, speed: 100});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltRight({steps: 24, speed: 100});
+		}
+	},
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltLeft({steps: 24, speed: 100});
+		}
+	}, 
+	{
+		delay: 1000,
+		task: function() {
+			d[id].tiltRight({steps: 12, speed: 100});
+		}
+	},
+	{
+		delay: 1000,
+		task: function() {
+			d[id].land();
+		}
+	},
+	{
+        delay: 1000,
+        task: function () {
+          temporal.clear();
+          // process.exit(0);
+        }
+     }
+	]);
 }
 
 // test code to autopilot
-exports.autopilot_test = function() {
-  console.log('Start autopilot_test() function');
+exports.autopilot_test = function(id) {
+
+	if (!d[id]) {
+		console.log('id is not correct ', id);
+		return;
+	}
+  	
+  	console.log('Start autopilot_test() function');
+      
       temporal.queue([
       {
         delay: 5000,
         task: function () {
           console.log('Getting ready for takeOff!');
-          d.takeOff();
-          d.flatTrim();
+          d[id].takeOff();
+          d[id].flatTrim();
         }
       },
       {
         delay: 4500,
         task: function () {
           console.log('Going forward');
-          d.forward({steps: 12});
+          d[id].forward({steps: 12});
         }
       },
       {
         delay: 4500,
         task: function () {
           console.log('Going up');
-          d.up({steps: 20});
+          d[id].up({steps: 20});
         }
       },
       {
         delay: 4500,
         task: function () {
           console.log('Going down');
-          d.down({steps: 20});
+          d[id].down({steps: 20});
         }
       },
       {
         delay: 4500,
         task: function () {
           console.log('Going left');
-          d.tiltLeft({steps: 12, speed: 100});
+          d[id].tiltLeft({steps: 12, speed: 100});
         }
       },
       {
         delay: 4500,
         task: function () {
           console.log('Going right');
-          d.tiltRight({steps: 12, speed: 100});
+          d[id].tiltRight({steps: 12, speed: 100});
         }
       },
       {
         delay: 5000,
         task: function () {
           console.log('OMG Flip!');
-          d.frontFlip();
+          d[id].frontFlip();
         }
       },
       {
         delay: 5000,
         task: function () {
           console.log('Time to land');
-          d.land();
+          d[id].land();
         }
       },
       {
@@ -245,77 +507,4 @@ exports.autopilot_test = function() {
       }
     ]);
 };
-
-
-exports.autopilot_test_blaze = function() {
-  console.log('Start autopilot_test() function');
-      temporal.queue([
-      {
-        delay: 5000,
-        task: function () {
-          console.log('Getting ready for takeOff!');
-          d_blaze.takeOff();
-          d_blaze.flatTrim();
-        }
-      },
-      {
-        delay: 4500,
-        task: function () {
-          console.log('Going forward');
-          d_blaze.forward({steps: 12});
-        }
-      },
-      {
-        delay: 4500,
-        task: function () {
-          console.log('Going up');
-          d_blaze.up({steps: 20});
-        }
-      },
-      {
-        delay: 4500,
-        task: function () {
-          console.log('Going down');
-          d_blaze.down({steps: 20});
-        }
-      },
-      {
-        delay: 4500,
-        task: function () {
-          console.log('Going left');
-          d_blaze.tiltLeft({steps: 12, speed: 100});
-        }
-      },
-      {
-        delay: 4500,
-        task: function () {
-          console.log('Going right');
-          d_blaze.tiltRight({steps: 12, speed: 100});
-        }
-      },
-      {
-        delay: 5000,
-        task: function () {
-          console.log('OMG Flip!');
-          d_blaze.frontFlip();
-        }
-      },
-      {
-        delay: 5000,
-        task: function () {
-          console.log('Time to land');
-          d_blaze.land();
-        }
-      },
-      {
-        delay: 5000,
-        task: function () {
-          temporal.clear();
-          // process.exit(0);
-        }
-      }
-    ]);
-};
-
-
 
