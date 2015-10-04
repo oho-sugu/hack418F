@@ -6,8 +6,6 @@ var fs= require('fs');
 
 var drone = require('./drone.js');
 console.log(drone);
-drone.wakeup('B');
-
 
 var RollingSpider = require("rolling-spider");
 var keypress = require('keypress');
@@ -19,11 +17,73 @@ process.stdin.resume();
 var ACTIVE = true;
 var STEPS = 5;
 
-var all = [{'text': 'Start',
-            'motion': [{'text':'go','motion':'t'},
-                       {'text':'up','motion':'u'},
-                       {'text':'up','motion':'u'} ]},
-           {'text': 'End', 'motion': [{'text':'gogo','motion':'up'},{'text':'back','motion':'down'}]}];
+var all = [
+  {
+    text: "人のいない遠い未来の物語",
+    motion: [
+      {
+        text: "",
+        motion: ""
+      }
+    ]
+  },
+  {
+    text: "遺された機械は日々の進捗を出すことによって、自らのエネルギーに変えていた。",
+    motion: [
+      {
+        text: "",
+        motion: ""
+      }
+    ]
+  },
+  {
+    text: "だが、魔王ドローンブレイズの進捗の略奪によって平穏は崩れた",
+    motion: [
+      {
+        text: "",
+        motion: ""
+      }
+    ]
+  },
+  {
+    text: "若者ドローンマーズの父も進捗を略奪され、壊れました。",
+    motion: [
+      {
+        text: "",
+        motion: ""
+      }
+    ]
+  },
+  {
+    text: "これは若者ドローンマーズの復讐と進捗の物語",
+    motion: [
+      {
+        text: "",
+        motion: ""
+      }
+    ]
+  }
+];
+
+console.log(all);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var num=0;
 var core=[0,0,0,0];
@@ -85,7 +145,7 @@ app.get('/sentaku/:index', function (req, res) {
   console.log(req.params.index);
 });
 
-/*
+
 setInterval(function(){
   var kore = 0;
   var max = -1;
@@ -95,7 +155,12 @@ setInterval(function(){
     kore = i;
   }
 
-  //all[num].motion[i].motion
+  console.log(all[num].id);
+
+  if(all[num].id){
+      drone[all[num].motion[i].motion](all[num].id);
+  }
+
   num++;
   var script = all[num].text;
   var sentaku = all[num].motion;
@@ -103,8 +168,8 @@ setInterval(function(){
   io.emit('sentaku', sentaku);
   core = [0,0,0,0];
 
-},5000);
-*/
+}, 5000);
+
 
 process.stdin.on('keypress', function (ch, key) {
 
